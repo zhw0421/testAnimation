@@ -16,6 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.zhwView.descUILabel.textColor = [UIColor blackColor];
+    self.zhwView.lineColor1 = [UIColor blackColor];
 }
 
 

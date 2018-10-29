@@ -55,6 +55,7 @@
                                     <userDefinedRuntimeAttribute type="color" keyPath="circleMainColor2">
                                         <color key="value" red="1" green="0.23921568627450979" blue="0.27450980392156865" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="desc" value="你好"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>

@@ -14,9 +14,6 @@ IB_DESIGNABLE
 -(void)setLineColor1:(UIColor *)lineColor1{
     _lineColor1 = lineColor1;
 }
--(void)setLineColor2:(UIColor *)lineColor2{
-    _lineColor2 = lineColor2;
-}
 
 -(void)setSmallCircleFristColor:(UIColor *)smallCircleFristColor{
     _smallCircleFristColor = smallCircleFristColor;
@@ -119,13 +116,21 @@ IB_DESIGNABLE
     CGSize size = [label.text sizeWithAttributes:[NSDictionary dictionaryWithObjectsAndKeys:label.font,NSFontAttributeName,nil]];
     label.frame = CGRectMake(self.frame.size.width/2 - size.width/2, self.frame.size.height/2 - 25, size.width, size.height);
     [self addSubview:label];
-    UILabel *label1 = [[UILabel alloc] init];
-    label1.text = @"加仓";
-    label1.font = [UIFont fontWithName:@"PingFang-SC-Heavy" size:28];
-    label1.textColor = [UIColor colorWithRed:245/255.0 green:73/255.0 blue:73/255.0 alpha:1];
-    CGSize size1 = [label1.text sizeWithAttributes:[NSDictionary dictionaryWithObjectsAndKeys:label1.font,NSFontAttributeName,nil]];
-    label1.frame = CGRectMake(self.frame.size.width/2 - size1.width/2, self.frame.size.height/2 , size1.width, size1.height);
-    [self addSubview:label1];
+    self.descUILabel = [[UILabel alloc] init];
+    if (self.desc) {
+        self.descUILabel.text = self.desc;
+    }else{
+        self.descUILabel.text = @"加仓";
+    }
+    self.descUILabel.font = [UIFont boldSystemFontOfSize:28];
+    if (self.descUIColor) {
+        self.descUILabel.textColor = [UIColor redColor];
+    }else{
+        self.descUILabel.textColor = self.descUIColor;
+    }
+    CGSize size1 = [self.descUILabel.text sizeWithAttributes:[NSDictionary dictionaryWithObjectsAndKeys:self.descUILabel.font,NSFontAttributeName,nil]];
+    self.descUILabel.frame = CGRectMake(self.frame.size.width/2 - size1.width/2, self.frame.size.height/2 , size1.width, size1.height);
+    [self addSubview:self.descUILabel];
 }
 
 
@@ -148,11 +153,7 @@ IB_DESIGNABLE
         layer.strokeColor = [UIColor blackColor].CGColor;
         layer.fillColor = [UIColor whiteColor].CGColor;
     }
-//    layer.shadowOpacity = 1;//阴影透明度,默认为0则看不到阴影
-//    layer.shadowRadius = 10;
-//    layer.shadowPath = path.CGPath;
     layer.frame = self.bounds;
-
     CABasicAnimation *scale = [CABasicAnimation animation];
     scale.keyPath = @"transform.scale";
     scale.fromValue =[NSNumber numberWithFloat:1.0];
@@ -165,14 +166,14 @@ IB_DESIGNABLE
     opacityAnimation.toValue = @(0.0);
     //防止执行完成后移除
     opacityAnimation.removedOnCompletion = NO;
-//    opacityAnimation.fillMode = kCAFillModeForwards;
-
+    //    opacityAnimation.fillMode = kCAFillModeForwards;
+    
     CAAnimationGroup *group = [CAAnimationGroup animation];
     group.animations = @[scale,opacityAnimation];
-    group.duration = 1.6;
+    group.duration = 1.3;
     group.repeatCount = HUGE_VALF;
     group.removedOnCompletion = NO;
-//    group.fillMode = kCAFillModeForwards;
+    //    group.fillMode = kCAFillModeForwards;
     [layer addAnimation:group forKey:nil];
     [self.layer addSublayer:layer];
 }
@@ -183,7 +184,7 @@ IB_DESIGNABLE
     [path addArcWithCenter:CGPointMake(self.frame.size.width/2, self.frame.size.height/2) radius:radius startAngle:startAngle endAngle:endAngle clockwise:YES];
     CAShapeLayer *layer = [[CAShapeLayer alloc] init];
     layer.path = path.CGPath;
-    layer.fillColor = [UIColor clearColor].CGColor;
+    layer.fillColor = [UIColor whiteColor].CGColor;
     layer.lineWidth = lineWidth;
     layer.strokeColor = color.CGColor;
     layer.lineCap = @"round";
@@ -192,7 +193,7 @@ IB_DESIGNABLE
 }
 
 -(void)drawMainCirclewithRadius:(CGFloat) radius withstartAngle:(CGFloat) startAngle
-                     withendAngle:(CGFloat) endAngle withLineWidth:(CGFloat )lineWidth withColor:(NSArray*)colors{
+                   withendAngle:(CGFloat) endAngle withLineWidth:(CGFloat )lineWidth withColor:(NSArray*)colors{
     UIBezierPath *path = [UIBezierPath bezierPath];
     [path addArcWithCenter:CGPointMake(self.frame.size.width/2, self.frame.size.height/2) radius:radius startAngle:startAngle endAngle:endAngle clockwise:YES];
     CAShapeLayer *layer = [[CAShapeLayer alloc] init];
