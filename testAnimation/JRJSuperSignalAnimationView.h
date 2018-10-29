@@ -27,9 +27,14 @@
 //重叠的两个圈上边圈的2个颜色
 @property (nonatomic, strong) IBInspectable UIColor *circleMainColor;
 @property (nonatomic, strong) IBInspectable UIColor *circleMainColor2;
+
+@property (nonatomic, strong) IBInspectable UIColor *animationColor;
+
 //文字的字体
 @property (nonatomic, strong) IBInspectable NSString *desc;
 @property (nonatomic, strong) IBInspectable UIColor *descUIColor;
 
 @property (nonatomic, strong)UILabel *descUILabel;
+@property (nonatomic, strong)UILabel *infomationUILabel;
+
 @end

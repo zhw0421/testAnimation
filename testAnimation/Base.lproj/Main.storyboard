@@ -23,7 +23,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cBO-dp-33B" customClass="JRJSuperSignalAnimationView">
                                 <rect key="frame" x="0.0" y="20" width="375" height="222"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="222" id="X3d-mQ-FC6"/>
                                 </constraints>

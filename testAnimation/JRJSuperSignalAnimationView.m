@@ -43,6 +43,9 @@ IB_DESIGNABLE
 -(void)setLineSmoothColor:(UIColor *)lineSmoothColor{
     _lineSmoothColor = lineSmoothColor;
 }
+-(void)setAnimationColor:(UIColor *)animationColor{
+    _animationColor = animationColor;
+}
 
 
 - (void)drawRect:(CGRect)rect {
@@ -64,7 +67,7 @@ IB_DESIGNABLE
     [self addCAGradientLayer:CGPointMake(20 + horizonheight, 90) withRadius:4.5];
     //画第二个点
     [self drawCiclePointWithArc:CGPointMake(20 + horizonheight*5.6, 87) withRadius:14.5 withColor:bigColor withFillColor:[UIColor clearColor].CGColor];
-    [self drawCiclePointWithArc:CGPointMake(20 + horizonheight*5.6, 87) withRadius:7.5 withColor:secondColor withFillColor:secondColor];
+    [self drawCiclePointWithArc:CGPointMake(20 + horizonheight*5.6, 87) withRadius:7.5 withColor:bigColor withFillColor:secondColor];
     [self addCAGradientLayer:CGPointMake(20 + horizonheight*5.6, 87) withRadius:3.5 ];
     //画第三个点
     [self drawCiclePointWithArc:CGPointMake(20 + horizonheight*4.5, 57.5) withRadius:5 withColor:secondColor withFillColor:secondColor];
@@ -131,6 +134,15 @@ IB_DESIGNABLE
     CGSize size1 = [self.descUILabel.text sizeWithAttributes:[NSDictionary dictionaryWithObjectsAndKeys:self.descUILabel.font,NSFontAttributeName,nil]];
     self.descUILabel.frame = CGRectMake(self.frame.size.width/2 - size1.width/2, self.frame.size.height/2 , size1.width, size1.height);
     [self addSubview:self.descUILabel];
+    
+    
+    self.infomationUILabel = [[UILabel alloc] init];
+    self.infomationUILabel.text = @"*5日前出现卖出信号，回避亏损-9.55%";
+    self.infomationUILabel.font = [UIFont systemFontOfSize:14.0];
+    CGSize size2 = [self.infomationUILabel.text sizeWithAttributes:[NSDictionary dictionaryWithObjectsAndKeys:self.infomationUILabel.font,NSFontAttributeName,nil]];
+    self.infomationUILabel.textColor = [UIColor colorWithRed:51/255.0 green:51/255.0 blue:51/255.0 alpha:1];
+    self.infomationUILabel.frame = CGRectMake(self.frame.size.width/2 - size2.width/2, self.frame.size.height/2 + 70 + 4, size2.width, size2.height);
+    [self addSubview:self.infomationUILabel];
 }
 
 
@@ -144,9 +156,9 @@ IB_DESIGNABLE
     layer.lineWidth = 10;
     layer.lineCap = @"round";
     layer.lineJoin = @"round";
-    if (self.smallCircleFristColor) {
+    if (self.animationColor) {
         layer.shadowColor = self.fristShadowColor.CGColor;
-        layer.strokeColor = _smallCircleFristColor.CGColor;
+        layer.strokeColor = self.animationColor.CGColor;
         layer.fillColor = [UIColor whiteColor].CGColor;
     }else{
         layer.shadowColor = [UIColor blackColor].CGColor;
@@ -284,6 +296,7 @@ IB_DESIGNABLE
     CGFloat endAngle = ((float)M_PI * 2) ;
     [path addArcWithCenter:center radius:radius startAngle:startAngle endAngle:endAngle clockwise:YES];
     layer.path = path.CGPath;
+    layer.lineWidth = 1.0;
     layer.strokeColor = color;
     layer.fillColor = fillcolor;
     [self.layer addSublayer:layer];

@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "testAnimation/JRJSuperSignalAnimationView.m"
-            timestampString = "562495478.514477"
+            timestampString = "562499214.138432"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "349"
-            endingLineNumber = "349"
+            startingLineNumber = "362"
+            endingLineNumber = "362"
             landmarkName = "-addCAGradientLayer:withRadius:"
             landmarkType = "7">
          </BreakpointContent>
