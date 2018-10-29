@@ -15,6 +15,7 @@
 		2A338BC22182DD130077D7A1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A338BC12182DD130077D7A1 /* main.m */; };
 		2A338BCC2182DD130077D7A1 /* testAnimationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A338BCB2182DD130077D7A1 /* testAnimationTests.m */; };
 		2A338BD72182DD130077D7A1 /* testAnimationUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A338BD62182DD130077D7A1 /* testAnimationUITests.m */; };
+		2A338BE62182DDB80077D7A1 /* JRJSuperSignalAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A338BE52182DDB80077D7A1 /* JRJSuperSignalAnimationView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		2A338BD22182DD130077D7A1 /* testAnimationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = testAnimationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A338BD62182DD130077D7A1 /* testAnimationUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = testAnimationUITests.m; sourceTree = "<group>"; };
 		2A338BD82182DD130077D7A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A338BE42182DDB80077D7A1 /* JRJSuperSignalAnimationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JRJSuperSignalAnimationView.h; sourceTree = "<group>"; };
+		2A338BE52182DDB80077D7A1 /* JRJSuperSignalAnimationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JRJSuperSignalAnimationView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +113,8 @@
 				2A338BBD2182DD130077D7A1 /* LaunchScreen.storyboard */,
 				2A338BC02182DD130077D7A1 /* Info.plist */,
 				2A338BC12182DD130077D7A1 /* main.m */,
+				2A338BE42182DDB80077D7A1 /* JRJSuperSignalAnimationView.h */,
+				2A338BE52182DDB80077D7A1 /* JRJSuperSignalAnimationView.m */,
 			);
 			path = testAnimation;
 			sourceTree = "<group>";
@@ -264,6 +269,7 @@
 			files = (
 				2A338BB72182DD120077D7A1 /* ViewController.m in Sources */,
 				2A338BC22182DD130077D7A1 /* main.m in Sources */,
+				2A338BE62182DDB80077D7A1 /* JRJSuperSignalAnimationView.m in Sources */,
 				2A338BB42182DD120077D7A1 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

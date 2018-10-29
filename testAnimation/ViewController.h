@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "JRJSuperSignalAnimationView.h"
 @interface ViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet JRJSuperSignalAnimationView *zhwView;
 
 @end
 
