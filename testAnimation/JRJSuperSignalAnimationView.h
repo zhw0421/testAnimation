@@ -9,13 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "UIColor+ColorExtension.h"
 
- typedef NS_ENUM(NSInteger, JRJSuperSignalAnimationViewStyle) {
-     JRJSuperSignalAddStockStyle = 0,
-     JRJSuperSignalReduceStockStyle = 1,
-     JRJSuperSignalSidelinesStockStyle = 2,
-     JRJSuperSignalHoldingStockStyle = 3,
-     JRJSuperSignalNoAuthStockStyle = 4
- };
+typedef NS_ENUM(NSInteger, JRJSuperSignalAnimationViewStyle) {
+    JRJSuperSignalAddStockStyle = 0,
+    JRJSuperSignalReduceStockStyle = 1,
+    JRJSuperSignalSidelinesStockStyle = 2,
+    JRJSuperSignalHoldingStockStyle = 3,
+    JRJSuperSignalNoAuthStockStyle = 4
+};
 @interface JRJSuperSignalAnimationView : UIView
 //横竖线的颜色
 @property (nonatomic, strong) IBInspectable UIColor *lineColor1;

@@ -8,6 +8,7 @@
 
 #import "JRJSuperSignalAnimationView.h"
 #define POINT(_INDEX_) [(NSValue *)[points objectAtIndex:_INDEX_] CGPointValue]
+#define ColorWithAlpha(r,g,b,a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
 IB_DESIGNABLE
 @implementation JRJSuperSignalAnimationView
 
@@ -79,8 +80,9 @@ IB_DESIGNABLE
     [self drawSmoothLine];
     //画中间圆圈
     
-    [self drawAnimationCircle:70 withstartAngle:((float)M_PI * 0.78) withendAngle:((float)M_PI * 0.22) withLineWidth:10 withTimer:1.3];
-    [self drawAnimationCircle:70 withstartAngle:((float)M_PI * 0.78) withendAngle:((float)M_PI * 0.22) withLineWidth:10 withTimer:1.0];
+    [self drawAnimationCircle:70 withstartAngle:((float)M_PI * 0.78) withendAngle:((float)M_PI * 0.22) withLineWidth:10 withTimer:1.2 beginTime:(CACurrentMediaTime() + 0.0)];
+    [self drawAnimationCircle:70 withstartAngle:((float)M_PI * 0.78) withendAngle:((float)M_PI * 0.22) withLineWidth:10 withTimer:1.2 beginTime:(CACurrentMediaTime() + 0.4)];
+    [self drawAnimationCircle:70 withstartAngle:((float)M_PI * 0.78) withendAngle:((float)M_PI * 0.22) withLineWidth:10 withTimer:1.2 beginTime:(CACurrentMediaTime() + 0.8)];
     
     _circlebgColor == nil ? [UIColor blackColor] : _circlebgColor;
     [self drawCenterCirclewithRadius:70  withstartAngle:((float)M_PI * 0.75) withendAngle:((float)M_PI * 0.25) withLineWidth:20 withColor:_circlebgColor];
@@ -161,6 +163,7 @@ IB_DESIGNABLE
         [textColor addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithHEX:0x2E7CD7] range:rangel];
         [textColor addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:14.0] range:rangel];
         [self.infomationUILabel setAttributedText:textColor];
+        
         self.infomationUILabel.frame = CGRectMake(self.frame.size.width/2 - size2.width/2 - size3.width/2, self.frame.size.height/2 + 70 + 4, size2.width, size2.height);
         imageView.frame = CGRectMake(self.frame.size.width/2 + size2.width/2 +  size3.width/2, self.frame.size.height/2 + 70 + 7, size3.width, size3.height);
         [self addSubview:self.infomationUILabel];
@@ -170,7 +173,7 @@ IB_DESIGNABLE
 
 
 -(void)drawAnimationCircle:(CGFloat)radius withstartAngle:(CGFloat) startAngle
-              withendAngle:(CGFloat) endAngle withLineWidth:(CGFloat )lineWidth withTimer:(CFTimeInterval) duration{
+              withendAngle:(CGFloat) endAngle withLineWidth:(CGFloat )lineWidth withTimer:(CFTimeInterval) duration beginTime: (CFTimeInterval)beginTime{
     UIBezierPath *path = [UIBezierPath bezierPath];
     [path addArcWithCenter:CGPointMake(self.frame.size.width/2, self.frame.size.height/2) radius:radius startAngle:startAngle endAngle:endAngle clockwise:YES];
     CAShapeLayer *layer = [[CAShapeLayer alloc] init];
@@ -180,7 +183,7 @@ IB_DESIGNABLE
     layer.lineCap = @"round";
     layer.lineJoin = @"round";
     if (self.animationColor) {
-        layer.shadowColor = self.fristShadowColor.CGColor;
+        //        layer.shadowColor = self.fristShadowColor.CGColor;
         layer.strokeColor = self.animationColor.CGColor;
         layer.fillColor = [UIColor whiteColor].CGColor;
     }else{
@@ -202,6 +205,7 @@ IB_DESIGNABLE
     CAAnimationGroup *group = [CAAnimationGroup animation];
     group.animations = @[scale,opacityAnimation];
     group.duration = duration;
+    group.beginTime = beginTime;
     group.repeatCount = HUGE_VALF;
     group.removedOnCompletion = NO;
     [layer addAnimation:group forKey:nil];
@@ -444,6 +448,4 @@ IB_DESIGNABLE
     self.textUIColor = self.textColorArray[index];
     self.desc = desc;
 }
-
-
 @end
