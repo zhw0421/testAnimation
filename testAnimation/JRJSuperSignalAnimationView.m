@@ -79,7 +79,8 @@ IB_DESIGNABLE
     [self drawSmoothLine];
     //画中间圆圈
     
-    [self drawAnimationCircle:70 withstartAngle:((float)M_PI * 0.78) withendAngle:((float)M_PI * 0.22) withLineWidth:10];
+    [self drawAnimationCircle:70 withstartAngle:((float)M_PI * 0.78) withendAngle:((float)M_PI * 0.22) withLineWidth:10 withTimer:1.3];
+    [self drawAnimationCircle:70 withstartAngle:((float)M_PI * 0.78) withendAngle:((float)M_PI * 0.22) withLineWidth:10 withTimer:1.0];
     
     _circlebgColor == nil ? [UIColor blackColor] : _circlebgColor;
     [self drawCenterCirclewithRadius:70  withstartAngle:((float)M_PI * 0.75) withendAngle:((float)M_PI * 0.25) withLineWidth:20 withColor:_circlebgColor];
@@ -169,7 +170,7 @@ IB_DESIGNABLE
 
 
 -(void)drawAnimationCircle:(CGFloat)radius withstartAngle:(CGFloat) startAngle
-              withendAngle:(CGFloat) endAngle withLineWidth:(CGFloat )lineWidth{
+              withendAngle:(CGFloat) endAngle withLineWidth:(CGFloat )lineWidth withTimer:(CFTimeInterval) duration{
     UIBezierPath *path = [UIBezierPath bezierPath];
     [path addArcWithCenter:CGPointMake(self.frame.size.width/2, self.frame.size.height/2) radius:radius startAngle:startAngle endAngle:endAngle clockwise:YES];
     CAShapeLayer *layer = [[CAShapeLayer alloc] init];
@@ -200,8 +201,7 @@ IB_DESIGNABLE
     opacityAnimation.toValue = @(0.0);
     CAAnimationGroup *group = [CAAnimationGroup animation];
     group.animations = @[scale,opacityAnimation];
-    group.duration = 1.3;
-    group.repeatDuration = 0.00;
+    group.duration = duration;
     group.repeatCount = HUGE_VALF;
     group.removedOnCompletion = NO;
     [layer addAnimation:group forKey:nil];
