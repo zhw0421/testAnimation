@@ -123,8 +123,9 @@ IB_DESIGNABLE
     label.frame = CGRectMake(self.frame.size.width/2 - size.width/2, self.frame.size.height/2 - 25, size.width, size.height);
     [self addSubview:label];
     self.descUILabel = [[UILabel alloc] init];
-    if (self.desc) {
-        self.descUILabel.text = self.desc;
+    NSString *tagStr = self.descArray[self.indexStyle];
+    if (tagStr) {
+        self.descUILabel.text = tagStr;
     }else{
         self.descUILabel.text = @"加仓";
     }
@@ -138,14 +139,32 @@ IB_DESIGNABLE
     self.descUILabel.frame = CGRectMake(self.frame.size.width/2 - size1.width/2, self.frame.size.height/2 , size1.width, size1.height);
     [self addSubview:self.descUILabel];
     
-    
-    self.infomationUILabel = [[UILabel alloc] init];
-    self.infomationUILabel.text = @"*5日前出现卖出信号，回避亏损-9.55%";
-    self.infomationUILabel.font = [UIFont systemFontOfSize:14.0];
-    CGSize size2 = [self.infomationUILabel.text sizeWithAttributes:[NSDictionary dictionaryWithObjectsAndKeys:self.infomationUILabel.font,NSFontAttributeName,nil]];
-    self.infomationUILabel.textColor = [UIColor colorWithRed:51/255.0 green:51/255.0 blue:51/255.0 alpha:1];
-    self.infomationUILabel.frame = CGRectMake(self.frame.size.width/2 - size2.width/2, self.frame.size.height/2 + 70 + 4, size2.width, size2.height);
-    [self addSubview:self.infomationUILabel];
+    if (self.indexStyle != JRJSuperSignalNoAuthStockStyle) {
+        self.infomationUILabel = [[UILabel alloc] init];
+        self.infomationUILabel.text = self.desc;
+        self.infomationUILabel.font = [UIFont systemFontOfSize:14.0];
+        CGSize size2 = [self.infomationUILabel.text sizeWithAttributes:[NSDictionary dictionaryWithObjectsAndKeys:self.infomationUILabel.font,NSFontAttributeName,nil]];
+        self.infomationUILabel.textColor = [UIColor colorWithRed:51/255.0 green:51/255.0 blue:51/255.0 alpha:1];
+        self.infomationUILabel.frame = CGRectMake(self.frame.size.width/2 - size2.width/2, self.frame.size.height/2 + 70 + 4, size2.width, size2.height);
+        [self addSubview:self.infomationUILabel];
+    }else{
+        self.infomationUILabel = [[UILabel alloc] init];
+        self.infomationUILabel.text = @"*日前出现买卖信号！请务必注意风险 解锁查看";
+        UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"signal_arrow"]];
+        CGSize size3 = [UIImage imageNamed:@"signal_arrow"].size;
+        self.infomationUILabel.font = [UIFont systemFontOfSize:14.0];
+        CGSize size2 = [self.infomationUILabel.text sizeWithAttributes:[NSDictionary dictionaryWithObjectsAndKeys:self.infomationUILabel.font,NSFontAttributeName,nil]];
+        self.infomationUILabel.textColor = [UIColor colorWithHEX:0x333333];
+        NSMutableAttributedString *textColor = [[NSMutableAttributedString alloc]initWithString:self.infomationUILabel.text];
+        NSRange rangel = [[textColor string] rangeOfString:[self.infomationUILabel.text substringFromIndex:self.infomationUILabel.text.length - 5]];
+        [textColor addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithHEX:0x2E7CD7] range:rangel];
+        [textColor addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:14.0] range:rangel];
+        [self.infomationUILabel setAttributedText:textColor];
+        self.infomationUILabel.frame = CGRectMake(self.frame.size.width/2 - size2.width/2 - size3.width/2, self.frame.size.height/2 + 70 + 4, size2.width, size2.height);
+        imageView.frame = CGRectMake(self.frame.size.width/2 + size2.width/2 +  size3.width/2, self.frame.size.height/2 + 70 + 7, size3.width, size3.height);
+        [self addSubview:self.infomationUILabel];
+        [self addSubview:imageView];
+    }
 }
 
 
@@ -397,10 +416,17 @@ IB_DESIGNABLE
     self.animationColorArray = @[[UIColor colorWithHEX:0xF9EBEB],[UIColor colorWithHEX:0xE5FDF6],[UIColor colorWithHEX:0xE5F4FD],[UIColor colorWithHEX:0xFDF6E5]];
     
     self.textColorArray = @[[UIColor colorWithHEX:0xF54949],[UIColor colorWithHEX:0x27BE6B],[UIColor colorWithHEX:0x1592ED],[UIColor colorWithHEX:0xFC8D2F]];
-
+    self.descArray = [NSArray arrayWithObjects:@"加仓",@"减仓",@"观望",@"持仓",@"***", nil];
 }
 
--(void)initJRJSuperSignalUIView:(JRJSuperSignalAnimationViewStyle)index{
+-(void)initJRJSuperSignalUIView:(JRJSuperSignalAnimationViewStyle)indexStyle withDesc:(NSString*)desc{
+    self.indexStyle = indexStyle;
+    JRJSuperSignalAnimationViewStyle index;
+    if (indexStyle == JRJSuperSignalNoAuthStockStyle) {
+        index = 3;
+    }else{
+        index = indexStyle;
+    }
     [self initColorArray];
     self.backgroundColor = [UIColor whiteColor];
     self.descUILabel.textColor = [UIColor blackColor];
@@ -416,6 +442,7 @@ IB_DESIGNABLE
     self.circleMainColor2 = self.circleMainColor2Array[index];
     self.animationColor = self.animationColorArray[index];
     self.textUIColor = self.textColorArray[index];
+    self.desc = desc;
 }
 
 

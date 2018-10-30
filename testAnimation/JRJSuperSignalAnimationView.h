@@ -14,6 +14,7 @@
      JRJSuperSignalReduceStockStyle = 1,
      JRJSuperSignalSidelinesStockStyle = 2,
      JRJSuperSignalHoldingStockStyle = 3,
+     JRJSuperSignalNoAuthStockStyle = 4
  };
 @interface JRJSuperSignalAnimationView : UIView
 //横竖线的颜色
@@ -41,7 +42,7 @@
 @property (nonatomic, strong) IBInspectable NSString *desc;
 @property (nonatomic, strong) IBInspectable UIColor *descUIColor;
 @property (nonatomic, strong) IBInspectable UIColor *textUIColor;
-
+@property (nonatomic, assign) JRJSuperSignalAnimationViewStyle indexStyle;
 @property (nonatomic, strong)UILabel *descUILabel;
 @property (nonatomic, strong)UILabel *infomationUILabel;
 @property (strong,nonatomic) NSArray *lineColor1Array;
@@ -56,6 +57,7 @@
 @property (strong,nonatomic) NSArray *circleMainColor2Array;
 @property (strong,nonatomic) NSArray *animationColorArray;
 @property (strong,nonatomic) NSArray *textColorArray;
+@property (strong,nonatomic) NSArray *descArray;
 
--(void)initJRJSuperSignalUIView:(JRJSuperSignalAnimationViewStyle)index;
+-(void)initJRJSuperSignalUIView:(JRJSuperSignalAnimationViewStyle)indexStyle withDesc:(NSString*)desc;
 @end

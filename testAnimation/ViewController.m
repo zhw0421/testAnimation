@@ -15,7 +15,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.zhwView initJRJSuperSignalUIView:JRJSuperSignalReduceStockStyle];
+    [self.zhwView initJRJSuperSignalUIView:JRJSuperSignalAddStockStyle withDesc:@"asdasdsa"];
 }
 
 
