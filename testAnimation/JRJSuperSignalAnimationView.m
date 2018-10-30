@@ -179,16 +179,12 @@ IB_DESIGNABLE
     //配置起始位置（fromeVaue）和终止位置（toValue）
     opacityAnimation.fromValue = @(1.0);
     opacityAnimation.toValue = @(0.0);
-    //防止执行完成后移除
-    opacityAnimation.removedOnCompletion = NO;
-    //    opacityAnimation.fillMode = kCAFillModeForwards;
-    
     CAAnimationGroup *group = [CAAnimationGroup animation];
     group.animations = @[scale,opacityAnimation];
     group.duration = 1.3;
+    group.repeatDuration = 0.00;
     group.repeatCount = HUGE_VALF;
     group.removedOnCompletion = NO;
-    //    group.fillMode = kCAFillModeForwards;
     [layer addAnimation:group forKey:nil];
     [self.layer addSublayer:layer];
 }
