@@ -1,0 +1,53 @@
+#                            _ __  _
+#                     ____ _(_) /_(_)___ _____  ____  ________
+#                    / __ `/ / __/ / __ `/ __ \/ __ \/ ___/ _ \
+#                  _/ /_/ / / /_/ / /_/ / / / / /_/ / /  /  __/
+#                 (_)__, /_/\__/_/\__, /_/ /_/\____/_/   \___/
+#                  /____/        /____/
+#
+#                     for iOS, OS X, Apple Watch projects
+#                  (с) Eugene Tulushev @tulushev tulushev.com
+
+# OS X
+# http://www.westwind.com/reference/os-x/invisibles.html
+
+*.swp
+*.lock
+.DS_Store
+.apdisk
+.AppleDouble
+.LSOverride
+.Trashes
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+
+# Xcode
+
+DerivedData/
+build/
+*~.nib
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+*.xccheckout
+!default.pbxuser
+!default.mode1v3
+!default.mode2v3
+!default.perspectivev3
+xcuserdata
+*.moved-aside
+
+# Cocoapods
+# http://guides.cocoapods.org/using/using-cocoapods.html
+
+Pods/
+!Podfile.lock
