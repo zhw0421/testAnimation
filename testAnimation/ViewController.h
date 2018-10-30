@@ -11,17 +11,6 @@
 #import "UIColor+ColorExtension.h"
 @interface ViewController : UIViewController
 @property (weak, nonatomic) IBOutlet JRJSuperSignalAnimationView *zhwView;
-@property (strong,nonatomic) NSArray *lineColor1Array;
-@property (strong,nonatomic) NSArray *lineSmoothColorArray;
-@property (strong,nonatomic) NSArray *smallCircleFristColorArray;
-@property (strong,nonatomic) NSArray *smallCircleFristColor2Array;
-@property (strong,nonatomic) NSArray *smallCircleSecondColor1Array;
-@property (strong,nonatomic) NSArray *smallCircleSecondColor2Array;
-@property (strong,nonatomic) NSArray *fristShadowColorArray;
-@property (strong,nonatomic) NSArray *circlebgColor1Array;
-@property (strong,nonatomic) NSArray *circleMainColorArray;
-@property (strong,nonatomic) NSArray *circleMainColor2Array;
-@property (strong,nonatomic) NSArray *animationColorArray;
 
 @end
 

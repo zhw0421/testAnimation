@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIColor+ColorExtension.h"
 
+ typedef NS_ENUM(NSInteger, JRJSuperSignalAnimationViewStyle) {
+     JRJSuperSignalAddStockStyle = 0,
+     JRJSuperSignalReduceStockStyle = 1,
+     JRJSuperSignalSidelinesStockStyle = 2,
+     JRJSuperSignalHoldingStockStyle = 3,
+ };
 @interface JRJSuperSignalAnimationView : UIView
 //横竖线的颜色
 @property (nonatomic, strong) IBInspectable UIColor *lineColor1;
@@ -33,8 +40,22 @@
 //文字的字体
 @property (nonatomic, strong) IBInspectable NSString *desc;
 @property (nonatomic, strong) IBInspectable UIColor *descUIColor;
+@property (nonatomic, strong) IBInspectable UIColor *textUIColor;
 
 @property (nonatomic, strong)UILabel *descUILabel;
 @property (nonatomic, strong)UILabel *infomationUILabel;
+@property (strong,nonatomic) NSArray *lineColor1Array;
+@property (strong,nonatomic) NSArray *lineSmoothColorArray;
+@property (strong,nonatomic) NSArray *smallCircleFristColorArray;
+@property (strong,nonatomic) NSArray *smallCircleFristColor2Array;
+@property (strong,nonatomic) NSArray *smallCircleSecondColor1Array;
+@property (strong,nonatomic) NSArray *smallCircleSecondColor2Array;
+@property (strong,nonatomic) NSArray *fristShadowColorArray;
+@property (strong,nonatomic) NSArray *circlebgColor1Array;
+@property (strong,nonatomic) NSArray *circleMainColorArray;
+@property (strong,nonatomic) NSArray *circleMainColor2Array;
+@property (strong,nonatomic) NSArray *animationColorArray;
+@property (strong,nonatomic) NSArray *textColorArray;
 
+-(void)initJRJSuperSignalUIView:(JRJSuperSignalAnimationViewStyle)index;
 @end
