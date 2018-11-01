@@ -23,13 +23,13 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cBO-dp-33B" customClass="JRJSuperSignalAnimationView">
                                 <rect key="frame" x="0.0" y="20" width="375" height="222"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="222" id="X3d-mQ-FC6"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="lineColor1">
-                                        <color key="value" red="1" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.98823529409999999" green="0.40784313729999999" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="smallCircleFristColor">
                                         <color key="value" red="0.9882352941176471" green="0.40784313725490196" blue="0.31764705882352939" alpha="1" colorSpace="calibratedRGB"/>
@@ -58,12 +58,22 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="desc" value="你好"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4F5-y9-yhr" customClass="ZhwPieChart">
+                                <rect key="frame" x="137.5" y="305" width="100" height="100"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="7K2-IT-qco"/>
+                                    <constraint firstAttribute="width" constant="100" id="Iad-oM-35S"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="4F5-y9-yhr" firstAttribute="top" secondItem="cBO-dp-33B" secondAttribute="bottom" constant="63" id="6g3-Fg-9U7"/>
                             <constraint firstItem="cBO-dp-33B" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="BVE-nk-EsR"/>
                             <constraint firstAttribute="trailing" secondItem="cBO-dp-33B" secondAttribute="trailing" id="E4i-eM-ruU"/>
                             <constraint firstItem="cBO-dp-33B" firstAttribute="top" secondItem="gmD-Ex-B2Y" secondAttribute="bottom" id="ONP-lw-mom"/>
+                            <constraint firstItem="4F5-y9-yhr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Tes-gf-gxy"/>
                         </constraints>
                     </view>
                     <connections>

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A219525218AA86C00BF52AA /* ZhwPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A219524218AA86C00BF52AA /* ZhwPieChart.m */; };
+		2A219528218AD75600BF52AA /* ZhwLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A219527218AD75600BF52AA /* ZhwLayer.m */; };
 		2A338BB42182DD120077D7A1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A338BB32182DD120077D7A1 /* AppDelegate.m */; };
 		2A338BB72182DD120077D7A1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A338BB62182DD120077D7A1 /* ViewController.m */; };
 		2A338BBA2182DD120077D7A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A338BB82182DD120077D7A1 /* Main.storyboard */; };
@@ -37,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A219523218AA86C00BF52AA /* ZhwPieChart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZhwPieChart.h; sourceTree = "<group>"; };
+		2A219524218AA86C00BF52AA /* ZhwPieChart.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZhwPieChart.m; sourceTree = "<group>"; };
+		2A219526218AD75600BF52AA /* ZhwLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZhwLayer.h; sourceTree = "<group>"; };
+		2A219527218AD75600BF52AA /* ZhwLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZhwLayer.m; sourceTree = "<group>"; };
 		2A338BAF2182DD120077D7A1 /* testAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testAnimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A338BB22182DD120077D7A1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2A338BB32182DD120077D7A1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -120,6 +126,10 @@
 				2A5718C22187048600EF2836 /* UIColor+ColorExtension.m */,
 				2A338BE42182DDB80077D7A1 /* JRJSuperSignalAnimationView.h */,
 				2A338BE52182DDB80077D7A1 /* JRJSuperSignalAnimationView.m */,
+				2A219523218AA86C00BF52AA /* ZhwPieChart.h */,
+				2A219524218AA86C00BF52AA /* ZhwPieChart.m */,
+				2A219526218AD75600BF52AA /* ZhwLayer.h */,
+				2A219527218AD75600BF52AA /* ZhwLayer.m */,
 			);
 			path = testAnimation;
 			sourceTree = "<group>";
@@ -273,6 +283,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A5718C42187048700EF2836 /* UIColor+ColorExtension.m in Sources */,
+				2A219528218AD75600BF52AA /* ZhwLayer.m in Sources */,
+				2A219525218AA86C00BF52AA /* ZhwPieChart.m in Sources */,
 				2A338BB72182DD120077D7A1 /* ViewController.m in Sources */,
 				2A338BC22182DD130077D7A1 /* main.m in Sources */,
 				2A338BE62182DDB80077D7A1 /* JRJSuperSignalAnimationView.m in Sources */,
