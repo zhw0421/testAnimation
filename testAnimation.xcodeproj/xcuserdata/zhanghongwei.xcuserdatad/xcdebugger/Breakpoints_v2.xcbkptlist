@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "testAnimation/ZhwPieChart.m"
-            timestampString = "562750882.837602"
+            timestampString = "562751112.736394"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "75"
@@ -26,12 +26,12 @@
                   moduleName = "testAnimation"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghongwei/Desktop/testAnimation/testAnimation/ZhwPieChart.m"
-                  timestampString = "562750204.2211781"
+                  timestampString = "562756640.621749"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "75"
                   endingLineNumber = "75"
-                  offsetFromSymbolStart = "68">
+                  offsetFromSymbolStart = "71">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -41,12 +41,12 @@
                   moduleName = "testAnimation"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhanghongwei/Desktop/testAnimation/testAnimation/ZhwPieChart.m"
-                  timestampString = "562750204.224352"
+                  timestampString = "562756640.62572"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "75"
                   endingLineNumber = "75"
-                  offsetFromSymbolStart = "84">
+                  offsetFromSymbolStart = "81">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "testAnimation/ZhwPieChart.m"
-            timestampString = "562750882.8379951"
+            timestampString = "562751112.736788"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "77"
@@ -74,12 +74,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "testAnimation/ZhwPieChart.m"
-            timestampString = "562750882.838232"
+            timestampString = "562751112.73704"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "79"
             endingLineNumber = "79"
             landmarkName = "-upDateLayersWithPoint:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "testAnimation/ViewController.m"
+            timestampString = "562756709.222229"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "-dealTimeLine:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "testAnimation/JRJSuperSignalAnimationView.m"
+            timestampString = "562756709.222308"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "458"
+            endingLineNumber = "458"
+            landmarkName = "-drawTicksWithPoint:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

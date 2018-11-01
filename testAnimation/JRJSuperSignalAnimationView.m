@@ -448,4 +448,41 @@ IB_DESIGNABLE
     self.textUIColor = self.textColorArray[index];
     self.desc = desc;
 }
+
+-(void)drawTicksWithPoint:(CGPoint)point{
+    UIBezierPath *path = [UIBezierPath bezierPath];
+    //竖线
+    [path moveToPoint:CGPointMake(point.x, 0)];
+    [path addLineToPoint:CGPointMake(point.x, CGRectGetHeight(self.frame))];
+    //横线
+    [path moveToPoint:CGPointMake(0, point.y)];
+    [path addLineToPoint:CGPointMake(CGRectGetWidth(self.frame), point.y)];
+    //设置横竖线的属性
+    self.ticksLayer.path = path.CGPath;
+    self.ticksLayer.lineWidth = 1.f;
+    self.ticksLayer.strokeColor = [UIColor blackColor].CGColor;
+    self.ticksLayer.fillColor = [UIColor clearColor].CGColor;
+    [self.layer addSublayer:self.ticksLayer];
+}
+/**
+ 清理长按响应图层
+ */
+- (void)clearTicks
+{
+    //清理十字叉图层
+    self.ticksLayer.sublayers = nil;
+    [self.ticksLayer removeFromSuperlayer];
+}
+
+- (CAShapeLayer *)ticksLayer
+{
+    if (!_ticksLayer)
+    {
+        _ticksLayer = [CAShapeLayer layer];
+    }
+    
+    return _ticksLayer;
+}
+
+
 @end

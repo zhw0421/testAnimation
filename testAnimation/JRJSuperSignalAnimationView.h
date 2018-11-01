@@ -37,6 +37,7 @@ typedef NS_ENUM(NSInteger, JRJSuperSignalAnimationViewStyle) {
 @property (nonatomic, strong) IBInspectable UIColor *circleMainColor2;
 
 @property (nonatomic, strong) IBInspectable UIColor *animationColor;
+@property (nonatomic, strong) CAShapeLayer *ticksLayer;
 
 //文字的字体
 @property (nonatomic, strong) IBInspectable NSString *desc;
@@ -60,4 +61,6 @@ typedef NS_ENUM(NSInteger, JRJSuperSignalAnimationViewStyle) {
 @property (strong,nonatomic) NSArray *descArray;
 
 -(void)initJRJSuperSignalUIView:(JRJSuperSignalAnimationViewStyle)indexStyle withDesc:(NSString*)desc;
+-(void)drawTicksWithPoint:(CGPoint)point;
+-(void)clearTicks;
 @end
