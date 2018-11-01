@@ -23,13 +23,13 @@ IB_DESIGNABLE
     for (int i=0; i<self.percentArr.count; i++) {
         ZhwLayer *layer = [ZhwLayer layer];
         UIColor *scolor =  self.percentColorArr[i];
-        UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:CGPointMake(self.frame.size.width/2,  self.frame.size.height/2) radius:self.frame.size.width/4 startAngle:startAngle * allcircle endAngle:endAngle * allcircle  clockwise:YES];
+        UIBezierPath *path = [UIBezierPath bezierPath];
+        [path moveToPoint:CGPointMake(self.frame.size.width/2,  self.frame.size.height/2)];
+        [path addArcWithCenter:CGPointMake(self.frame.size.width/2,  self.frame.size.height/2) radius:self.frame.size.width/4 startAngle:startAngle * allcircle   endAngle:endAngle * allcircle   clockwise:YES];
         layer.startAngle = startAngle * allcircle;
         layer.endAngle = endAngle * allcircle;
         layer.path = path.CGPath;
-        layer.lineWidth = self.frame.size.width/2;
-        layer.fillColor = [UIColor clearColor].CGColor;
-        layer.strokeColor = scolor.CGColor;
+        layer.fillColor = scolor.CGColor;
         [self.layer addSublayer:layer];
         if (i < self.percentArr.count - 1) {
             float percent = [self.percentArr[i+1] floatValue];
